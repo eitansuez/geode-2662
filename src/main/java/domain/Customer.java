@@ -2,6 +2,15 @@ package domain;
 
 public class Customer {
   String firstName, lastName;
+  String telephone;
+
+  public String getTelephone() {
+    return telephone;
+  }
+
+  public void setTelephone(String telephone) {
+    this.telephone = telephone;
+  }
 
   public Customer() { }
 
@@ -10,6 +19,7 @@ public class Customer {
     return "Customer{" +
         "firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
+        ", telephone='" + telephone + '\'' +
         '}';
   }
 

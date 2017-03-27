@@ -7,7 +7,7 @@ import org.apache.geode.cache.client.ClientCacheFactory;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ClientTest {
+public class ThirdCustomer {
 
   private Region<Long, Customer> customerRegion;
 
@@ -18,16 +18,11 @@ public class ClientTest {
   }
 
   @Test
-  public void writeTwoCustomers() {
-    Customer c = new Customer();
-    c.setFirstName("John");
-    c.setLastName("Doe");
-    customerRegion.put(1L, c);
-
-    Customer c2 = new Customer();
-    c2.setFirstName("Jane");
-    c2.setLastName("Doe");
-    customerRegion.put(2L, c2);
+  public void addAnotherCustomer() {
+    Customer c3 = new Customer();
+    c3.setFirstName("Tom");
+    c3.setLastName("Smith");
+    c3.setTelephone("(512) 333-4444");
+    customerRegion.put(3L, c3);
   }
-
 }
