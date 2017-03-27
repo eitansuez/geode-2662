@@ -35,3 +35,26 @@ connect
 query --query="select * from /Customer"
 ----
 
+. modify Customer.java
++
+let's add a telephone number field:
++
+----
+git checkout modify_customer
+----
+
+. write a 3rd record
++
+----
+gradle test -Dtest.single=ThirdCustomer
+----
+
+. verify
++
+----
+gfsh
+connect
+query --query="select * from /Customer"
+----
+
+
