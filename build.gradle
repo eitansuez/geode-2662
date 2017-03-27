@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.geode:geode-core:1.1.0'
+  testCompile 'junit:junit:4.12'
+}
