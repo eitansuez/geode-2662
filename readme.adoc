@@ -5,7 +5,7 @@ https://issues.apache.org/jira/browse/GEODE-2662
 
 == Steps
 
-1. Start a cluster:
+. Start a cluster:
 +
 ----
 cd cluster
@@ -21,7 +21,7 @@ list members
 list regions
 ----
 
-2. Insert a couple of records:
+. Insert a couple of records:
 +
 ----
 gradle test
