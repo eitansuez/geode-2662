@@ -57,4 +57,38 @@ connect
 query --query="select * from /Customer"
 ----
 
+. check the output:
++
+----
+gfsh>query --query="select * from /Customer"
 
+Result     : true
+startCount : 0
+endCount   : 20
+Rows       : 3
+
+firstName | lastName | telephone
+--------- | -------- | --------------
+Jane      | Doe      | (512) 333-4444
+John      | Doe      | null
+Tom       | Smith    | null
+
+NEXT_STEP_NAME : END
+----
+
+Clearly, that phone number does not belong to Jane Doe.  Yet it shows up on the wrong row.  In fact:
+
+----
+gfsh>query --query="select * from /Customer where lastName='Smith'"
+
+Result     : true
+startCount : 0
+endCount   : 20
+Rows       : 1
+
+firstName | lastName | telephone
+--------- | -------- | --------------
+Tom       | Smith    | (512) 333-4444
+
+NEXT_STEP_NAME : END
+----
